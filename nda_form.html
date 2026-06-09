@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>비밀유지서약서</title>
+    <style>
+        /* 웹 및 인쇄 환경 공통 초기화 */
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Malgun Gothic', sans-serif; 
+            margin: 0; padding: 20px;
+            background-color: #525659; /* 화면상 PDF 뷰어처럼 보이게 배경색 지정 */
+            display: flex; flex-direction: column; align-items: center;
+        }
+        
+        .print-btn { margin-bottom: 20px; }
+        .print-btn button { padding: 10px 25px; font-size: 16px; font-weight: bold; cursor: pointer; }
+
+        /* A4 사이즈 강제 컨테이너 */
+        .a4-container {
+            background-color: white;
+            width: 210mm;
+            height: 297mm; /* A4 세로 길이 고정 */
+            padding: 20mm; /* A4 내부 여백 */
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* 위아래로 내용 꽉 차게 분배 */
+            word-break: keep-all; text-align: justify;
+        }
+
+        h1 { text-align: center; margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
+        th, td { border: 1px solid #000; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; text-align: center; white-space: nowrap; width: 15%; }
+        td { width: 35%; } 
+        .center { text-align: center; }
+        
+        .content-wrap p, .content-wrap li { line-height: 1.8; margin-bottom: 12px; font-size: 11pt; }
+
+        .footer-wrap { display: flex; justify-content: space-between; align-items: flex-end; }
+        .company-name { font-weight: bold; font-size: 1.3em; }
+        .sign-area { text-align: right; font-size: 12pt; }
+
+        /* 실제 인쇄 시 적용될 CSS */
+        @media print {
+            @page { size: A4 portrait; margin: 0; } /* 브라우저 여백 제거 */
+            body { background-color: white; padding: 0; }
+            .print-btn { display: none; }
+            .a4-container { box-shadow: none; height: 297mm; padding: 15mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-btn">
+        <button onclick="window.print()">🖨️ 인쇄하기 (설정: 여백 없음, 머리글 해제)</button>
+    </div>
+
+    <div class="a4-container">
+        <div>
+            <h1>비밀유지서약서</h1>
+
+            <table>
+                <tr>
+                    <th rowspan="2" style="width: 10%;">회사</th>
+                    <th>회사명</th>
+                    <td></td>
+                    <th>사업자등록번호</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>대표명</th>
+                    <td></td>
+                    <th>전화번호 / 주소</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th rowspan="2" style="width: 10%;">종사자</th>
+                    <th>성명</th>
+                    <td></td>
+                    <th>주민등록번호</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>소속 / 연락처</th>
+                    <td></td>
+                    <th>주소</th>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div class="content-wrap">
+                <p>본 내용은 [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ] (이하 "회사"라 한다)의 영업비밀 또는 경영상의 중요정보에 대한 보호를 위한 동의 및 확약서로 종사자 (이하 "종사자 본인"이라고 한다)은(는) "회사"의 중요업무를 담당하고 있으며, 이에 대하여 회사 업무와 관련 있는 모든 자료를 제공 및 비밀을 유지하는데 대하여 아래와 같이 동의합니다.</p>
+                
+                <h3 class="center">- 아 래 -</h3>
+
+                <p><strong>1. 사용목적 :</strong> "회사"의 영업비밀 및 경영상의 중요정보 보호</p>
+                <p><strong>2. 영업비밀 및 경영상의 중요정보 :</strong> "회사"의 업무와 관련된 영업비밀 및 중요 정보(문서/노트북/컴퓨터 /외장하드/USB/클라우드 등 저장매체 자료와 문서정보)</p>
+                <p><strong>3. 비밀유지 서약사항</strong></p>
+                <ul>
+                    <li>"종사자 본인"은 "회사"를 재직 및 퇴직함에 있어 "회사"의 영업비밀과 경영상의 중요정보를 "회사"의 서면 동의 없이 제3자에게 공개하거나 누설하지 아니하며 창업이나 경쟁관계에 있는 타 회사 및 제3자를 위해 절대로 사용하지 않겠습니다.</li>
+                    <li>"종사자 본인"은 재직기간 동안 독자적으로 또는 다른 종사자들과 함께 이룬 실적 및 성과와 관련한 영업 및 경영상의 비밀을 재직 및 퇴직 후에도 "회사"가 독자적으로 또는 소유, 사용, 처분할 권리가 있음을 인정하며, "회사"의 원만한 경영활동 요청시 "종사자 본인의 재직기간 중 담당했던 업무와 관련된 사항에 대해 협조하였습니다.</li>
+                    <li>"종사자 본인"은 퇴직과 동시에 재직기간 중 가지고 있던 회사의 영업비밀 및 경영상의 중요한 정보가 기록되고 보관된 일체의 자료를 즉시 반납하겠습니다.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-wrap">
+            <div class="company-name">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ] 귀중</div>
+            <div class="sign-area">
+                <p style="margin-bottom: 20px;">20&nbsp;&nbsp;&nbsp;&nbsp;년&nbsp;&nbsp;&nbsp;&nbsp;월&nbsp;&nbsp;&nbsp;&nbsp;일</p>
+                <p>서약자 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(인)</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
